@@ -1,0 +1,24 @@
+services:
+  loadbalance:
+    image: nginx:1.27.0-alpine
+    container_name: loadbalance
+    ports:
+      - "8080:80"
+
+  node1:
+    image: nginx:1.27.0-alpine
+    container_name: node1
+    volumes:
+      - "/home/erlison/home/vscode/react/vite-project/dist:/usr/share/nginx/html"
+
+  node2:
+    image: nginx:1.27.0-alpine
+    container_name: node2
+    volumes:
+      - "/home/erlison/home/vscode/react/vite-project/dist:/usr/share/nginx/html"
+
+  node3:
+    image: nginx:1.27.0-alpine
+    container_name: node3
+    volumes:
+      - "/home/erlison/home/vscode/react/vite-project/dist:/usr/share/nginx/html"
